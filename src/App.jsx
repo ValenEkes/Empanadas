@@ -1,14 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import './Formulario'
+import Formulario from './Formulario'
 import './App.css'
-
+import React,{useState} from "react"
 function App() {
-  const [count, setCount] = useState(0)
+  const [Empleados, setEmpleados] = useState([])
 
   return (
     <>
-    
+    <Formulario Empleados={Empleados} setEmpleados={setEmpleados}></Formulario>
     </>
   )
 }
