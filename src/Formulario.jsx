@@ -19,6 +19,7 @@ let Formulario = ({ Empleados, setEmpleados }) => {
     return (
         <>
             <form onSubmit={agregarEmpleado}>
+                <h2>Pedido de empanadas</h2>
                 <p>Nombre</p>
                 <div>
                 <input type="text" name="Nombre" class="u-full-width" placeholder="Nombre del empleado" />
