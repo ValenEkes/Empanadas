@@ -1,8 +1,6 @@
-import React,{useState} from "react"
-let Formulario = ({ Empleados, setEmpleados }) => {
-    const [empanadas, setEmpanadas] = useState([
-        { Gusto: "Carne", CantidadEmpanadas: "" }
-    ]);
+
+let Formulario = ({ Empleados, setEmpleados,empanadas,setEmpanadas }) => {
+
 
     const agregarCampo = () => {
         setEmpanadas([...empanadas, { Gusto: "Carne", CantidadEmpanadas: "" }]);
@@ -27,6 +25,8 @@ let Formulario = ({ Empleados, setEmpleados }) => {
 
         
         e.target.Nombre.value = "";
+        e.target.Sector.value=""
+        e.target.Gusto.value=""
         setEmpanadas([{ Gusto: "Carne", CantidadEmpanadas: "" }]);
     };
 
@@ -51,17 +51,16 @@ let Formulario = ({ Empleados, setEmpleados }) => {
                         <option value="Sistemas">Sistemas</option>
                         <option value="Finanzas">Finanzas</option>
                         <option value="Ventas">Ventas</option>
+                        <option value="RecursosHumanos">Recursos Humanos</option>
+                        <option value="Soporte">Soporte</option>
+                        <option value="Deposito">Deposito</option>
                     </select>
                 </div>
 
-                <p>Empanadas</p>
                 {empanadas.map((emp, index) => (
                     <div key={index}>
                         <p>Tipo de Empanada</p>
-                        <select
-                            value={emp.Gusto}
-                            onChange={(e) => actualizarCampo(index, "Gusto", e.target.value)}
-                        >
+                        <select value={emp.Gusto} onChange={(e) => actualizarCampo(index, "Gusto", e.target.value)}>
                             <option value="Carne">Carne</option>
                             <option value="Pollo">Pollo</option>
                             <option value="Jamon y Queso">Jamon y Queso</option>
